@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <header>
+        <h1>Order Form</h1>
+    </header>
+
+    <main>
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="picture-description">Picture Description:</label>
+                <textarea id="picture-description" name="picture-description" rows="4" required></textarea>
+            </div>
+
+            <button type="submit">Submit Order</button>
+            <a href="loggedin.html" class="home-button">Home</a>
+        </form>
+    </main>
+</body>
+</html>

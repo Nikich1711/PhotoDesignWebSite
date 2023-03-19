@@ -1,0 +1,71 @@
+﻿*{
+margin: 0;
+padding: 0;
+    box - sizing: border - box;
+    font - family: 'Poppins', sans - serif;
+
+}
+.container
+{
+width: 100 %;
+    min - height: 100vh;
+padding: 5 %;
+    background - image: linear - gradient(rgba(0, 26, 51, 0), rgba(0, 26, 51, 0)), url(images / background.jpg);
+    background - position:center;
+    background - size: cover;
+display: flex;
+    align - items: center;
+    justify - content: center;
+}
+ 
+ .search - bar {
+position: relative;
+width: 100 %;
+    max - width: 500px;
+background: transparent;
+display: flex;
+    align - items: center;
+    border - radius: 60px;
+padding: 10px 20px;
+    backdrop - filter: blur(4px) saturate(180 %);
+transition: all 0.3s ease-in-out;
+}
+ 
+ .search - bar input
+{
+background: transparent;
+flex: 1;
+border: 0;
+outline: none;
+padding: 24px 20px;
+    font - size: 20px;
+color: darkgrey;
+transition: all 0.3s ease-in-out;
+}
+ 
+ .search - bar button img
+{
+    width: 25px;
+}
+ 
+ .search - bar button
+{
+position: absolute;
+top: 0;
+right: 0;
+margin: 10px;
+border: 0;
+    border - radius: 50 %;
+width: 60px;
+height: 60px;
+background: lightslategray;
+cursor: pointer;
+}
+ 
+ .search - bar input: focus {
+    max - width: 70 %;
+}
+ 
+ .search - bar input: not(:placeholder - shown) {
+    max - width: 70 %;
+}

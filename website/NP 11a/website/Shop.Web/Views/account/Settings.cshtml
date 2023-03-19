@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Gazari</title>
+    <link rel="stylesheet" href="usersettings.css">
+    <link rel="stylesheet" href="navbarloggedin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".toggle").on("click", function () {
+
+                if ($(".item").hasClass("active")) {
+                    $(".item").removeClass("active");
+                }
+                else {
+                    $(".item").addClass("active");
+                }
+            })
+
+        });
+        const toggleButton = document.getElementsByClassName('toggle')[0];
+        const navbarLinks = document.getElementsByClassName('menu')[0];
+        const imagesDropdown = document.getElementById('images-dropdown');
+
+        toggleButton.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+        });
+
+        imagesDropdown.addEventListener('click', () => {
+            imagesDropdown.classList.toggle('active');
+        });
+
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu() {
+            document.getElementById("subMenu").classList.toggle("open-menu");
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <img src="images/logo.png" class="LOGO">
+            <li class="item"><a href="ImageGallery.html">images</a></li>
+            <li class="item"><a href="loggedin.html">Home</a></li>
+            <li class="toggle"><span class="bars"></span></li>
+            <li class="item button secondary"><a href="Order.html">Order</a></li>
+            <li class="hero"><img src="images/user-profile.png" class="user-pic" onclick="toggleMenu()"></li>
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <div class="images/user-profile">
+                            <h2>Ivailo Venelinov</h2>
+
+                            <a href="userprofile.html" class="sub-menu-link">
+                                <img src="images/profile.png">
+                                <p>Edit profile</p>
+                            </a>
+                            <a href="usersettings.html" class="sub-menu-link">
+                                <img src="images/setting.png">
+                                <p>Settings & Privacy</p>
+                            </a>
+                            <a href="userhelp.html" class="sub-menu-link">
+                                <img src="images/help.png">
+                                <p>Help & Support</p>
+                            </a>
+                            <a href="site.html" class="sub-menu-link">
+                                <img src="images/logout.png">
+                                <p>Logout</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ul>
+
+    </nav>
+    <div class="container">
+        <h1>Settings and Privacy</h1>
+        <form>
+            <h2>Account Settings</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <h2>Privacy Settings</h2>
+            <label for="visibility">Visibility:</label>
+            <select id="visibility" name="visibility">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+                <option value="friends">Friends Only</option>
+            </select><br><br>
+            <label for="notifications">Notifications:</label>
+            <input type="checkbox" id="notifications" name="notifications" value="true"><br><br>
+            <input type="submit" value="Save Changes">
+            <a href="loggedin.html" class="home-button">Home</a>
+        </form>
+    </div>
+</body>
+</html>

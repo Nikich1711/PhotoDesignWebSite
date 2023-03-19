@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Gazari</title>
+    <link rel="stylesheet" href="userprofile.css">
+    <link rel="stylesheet" href="navbarloggedin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".toggle").on("click", function () {
+
+                if ($(".item").hasClass("active")) {
+                    $(".item").removeClass("active");
+                }
+                else {
+                    $(".item").addClass("active");
+                }
+            })
+
+        });
+        const toggleButton = document.getElementsByClassName('toggle')[0];
+        const navbarLinks = document.getElementsByClassName('menu')[0];
+        const imagesDropdown = document.getElementById('images-dropdown');
+
+        toggleButton.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+        });
+
+        imagesDropdown.addEventListener('click', () => {
+            imagesDropdown.classList.toggle('active');
+        });
+
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu() {
+            document.getElementById("subMenu").classList.toggle("open-menu");
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <img src="images/logo.png" class="LOGO">
+            <li class="item"><a href="ImageGallery.html">images</a></li>
+            <li class="item"><a href="loggedin.html">Home</a></li>
+            <li class="toggle"><span class="bars"></span></li>
+            <li class="item button secondary"><a href="Order.html">Order</a></li>
+            <li class="hero"><img src="images/user-profile.png" class="user-pic" onclick="toggleMenu()"></li>
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <div class="images/user-profile">
+                            <h2>Ivailo Venelinov</h2>
+
+                            <a href="userprofile.html" class="sub-menu-link">
+                                <img src="images/profile.png">
+                                <p>Edit profile</p>
+                            </a>
+                            <a href="usersettings.html" class="sub-menu-link">
+                                <img src="images/setting.png">
+                                <p>Settings & Privacy</p>
+                            </a>
+                            <a href="userhelp.html" class="sub-menu-link">
+                                <img src="images/help.png">
+                                <p>Help & Support</p>
+                            </a>
+                            <a href="site.html" class="sub-menu-link">
+                                <img src="images/logout.png">
+                                <p>Logout</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ul>
+
+    </nav>
+    <div class="container">
+        <div class="profile">
+        </div>
+        <h1>User Profile Page</h1>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="user@example.com" required>
+
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" value="John" required>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" value="Doe" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="update-profile" style="display: inline-block;">Update Profile</button>
+            <button class="home-btn" style="display: inline-block;"><i class="fas fa-home"></i> Home</button>
